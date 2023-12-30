@@ -4,7 +4,7 @@ import 'package:spy/src/modules/home/home_provider.dart';
 import 'package:wheel_chooser/wheel_chooser.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _HomeScreen extends StatelessWidget {
-  const _HomeScreen({super.key});
+  const _HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,61 +26,33 @@ class _HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            children: [
-              const Text('Player count'),
-              const SizedBox(height: 16),
-              SizedBox(
-                height: 32,
-                width: double.maxFinite,
-                child: WheelChooser(
-                  datas: provider.playerCount,
-                  magnification: 1.4,
-                  startPosition: 5,
-                  onValueChanged: (s) => print(s),
-                  horizontal: true,
-                ),
-              ),
-            ],
-          ),
+          _buildWheelChooser('Player count', provider.playerCount, 5),
           const SizedBox(height: 32),
-          Column(
-            children: [
-              const Text('Spy count'),
-              const SizedBox(height: 16),
-              SizedBox(
-                height: 32,
-                width: double.maxFinite,
-                child: WheelChooser(
-                  datas: provider.spyCount,
-                  magnification: 1.4,
-                  startPosition: 0,
-                  onValueChanged: (s) => print(s),
-                  horizontal: true,
-                ),
-              ),
-            ],
-          ),
+          _buildWheelChooser('Spy count', provider.spyCount, 0),
           const SizedBox(height: 32),
-          Column(
-            children: [
-              const Text('Time'),
-              const SizedBox(height: 16),
-              SizedBox(
-                height: 32,
-                width: double.maxFinite,
-                child: WheelChooser(
-                  datas: provider.time,
-                  magnification: 1.4,
-                  startPosition: 1,
-                  onValueChanged: (s) => print(s),
-                  horizontal: true,
-                ),
-              ),
-            ],
-          ),
+          _buildWheelChooser('Time', provider.time, 1),
         ],
       ),
+    );
+  }
+
+  Widget _buildWheelChooser(String label, List<int> datas, int startPosition) {
+    return Column(
+      children: [
+        Text(label),
+        const SizedBox(height: 16),
+        SizedBox(
+          height: 32,
+          width: double.maxFinite,
+          child: WheelChooser(
+            datas: datas,
+            magnification: 1.4,
+            startPosition: startPosition,
+            onValueChanged: (s) => print(s),
+            horizontal: true,
+          ),
+        ),
+      ],
     );
   }
 }
