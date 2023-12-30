@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:spy/src/modules/home/home_provider.dart';
 import 'package:wheel_chooser/wheel_chooser.dart';
@@ -31,6 +32,8 @@ class _HomeScreen extends StatelessWidget {
           _buildWheelChooser('Spy count', provider.spyCount, 0),
           const SizedBox(height: 32),
           _buildWheelChooser('Time', provider.time, 1),
+          const SizedBox(height: 64),
+          ElevatedButton(onPressed: () => context.go('/play_screen'), child: const Text('play')),
         ],
       ),
     );
