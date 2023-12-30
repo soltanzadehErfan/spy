@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:spy/src/modules/home/home_screen.dart';
+import 'package:spy/src/modules/play/play_screen.dart';
 import 'package:spy/src/modules/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -29,6 +30,12 @@ class MyApp extends StatelessWidget {
             path: '/home_screen',
             builder: (BuildContext context, GoRouterState state) {
               return const HomeScreen();
+            },
+          ),
+          GoRoute(
+            path: '/play_screen',
+            builder: (BuildContext context, GoRouterState state) {
+              return const PlayScreen();
             },
           ),
         ],
