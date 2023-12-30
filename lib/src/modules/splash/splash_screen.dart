@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     timer = Timer(
-      const Duration(seconds: 1),
+      const Duration(seconds: 2),
       () async {
         context.go('/home_screen');
       },
@@ -32,8 +33,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Splash')),
+    return Scaffold(
+      body: Center(
+        child: SvgPicture.asset(
+          fit: BoxFit.fitHeight,
+          'assets/images/splash.svg',
+        ),
+      ),
     );
   }
 }
