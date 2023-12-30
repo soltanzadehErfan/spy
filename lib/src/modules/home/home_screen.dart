@@ -27,6 +27,15 @@ class _HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text(
+            'SPY THE GAME',
+            style: TextStyle(
+              fontSize: 20,
+              letterSpacing: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 64),
           _buildWheelChooser('Player count', provider.playerCount, 5),
           const SizedBox(height: 32),
           _buildWheelChooser('Spy count', provider.spyCount, 0),
