@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 
 class PlayProvider extends ChangeNotifier {
@@ -37,4 +39,10 @@ class PlayProvider extends ChangeNotifier {
   PlayProvider({
     required this.context,
   });
+
+  String getRandomLocation() {
+    final random = Random();
+    final randomIndex = random.nextInt(locationsFA.length);
+    return locationsFA[randomIndex];
+  }
 }

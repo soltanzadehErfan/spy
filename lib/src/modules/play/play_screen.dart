@@ -19,6 +19,28 @@ class _PlayScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final playProvider = context.watch<PlayProvider>();
+    final randomLocation = playProvider.getRandomLocation();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('SPY THE GAME'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              randomLocation,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

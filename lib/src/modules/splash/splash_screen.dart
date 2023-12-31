@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     timer = Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 0),
       () async {
         context.go('/home_screen');
       },
