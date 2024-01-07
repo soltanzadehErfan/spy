@@ -29,11 +29,7 @@ class _HomeScreen extends StatelessWidget {
         children: [
           const Text(
             'SPY THE GAME',
-            style: TextStyle(
-              fontSize: 20,
-              letterSpacing: 12,
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(fontSize: 20, letterSpacing: 12, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 64),
           _buildWheelChooser('Player count', provider.playerCount, 5),
@@ -42,7 +38,7 @@ class _HomeScreen extends StatelessWidget {
           const SizedBox(height: 32),
           _buildWheelChooser('Time', provider.time, 1),
           const SizedBox(height: 64),
-          ElevatedButton(onPressed: () => context.go('/play_screen'), child: const Text('play')),
+          ElevatedButton(onPressed: () => context.go('/play_screen'), child: const Text('Play')),
         ],
       ),
     );

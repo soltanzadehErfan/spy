@@ -33,10 +33,7 @@ class _PlayScreen extends StatelessWidget {
           children: [
             Text(
               randomLocation,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ],
         ),
