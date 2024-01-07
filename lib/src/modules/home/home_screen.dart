@@ -22,7 +22,6 @@ class _HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<HomeProvider>();
-
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +37,9 @@ class _HomeScreen extends StatelessWidget {
           const SizedBox(height: 32),
           _buildWheelChooser('Time', provider.time, 1),
           const SizedBox(height: 64),
-          ElevatedButton(onPressed: () => context.go('/play_screen'), child: const Text('Play')),
+          SizedBox(
+              width: MediaQuery.of(context).size.width / 3,
+              child: ElevatedButton(onPressed: () => context.go('/play_screen'), child: const Text('Play'))),
         ],
       ),
     );

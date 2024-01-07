@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SPY',
       locale: const Locale('_fa', 'IR'),
-      darkTheme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(),
       routerConfig: _router,
     );
   }
